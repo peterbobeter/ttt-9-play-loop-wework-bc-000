@@ -30,9 +30,18 @@ def turn(board)
   if valid_move?(board, index)
     move(board, index)
     display_board(board)
+    play(board)
   else
-    turn(board)
+    #turn(board)
+    puts "The game is over"
+    return false 
   end
 end
 
 # Define your play method below
+
+def play(board)
+  while turn(board) == true 
+    turn(board)
+  end
+end
